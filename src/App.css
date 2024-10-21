@@ -1,0 +1,89 @@
+body {
+  background: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.neon-text {
+  position: relative;
+  background: linear-gradient(135deg, #00ffcc, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    0 0 5px rgba(0, 255, 204, 0.5), 
+    0 0 10px rgba(0, 255, 204, 0.5);
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 1px 1px 0 rgba(0, 255, 204, 0.5); }
+  20% { text-shadow: -1px -1px 0 rgba(0, 255, 204, 0.5); }
+  40% { text-shadow: 1px -1px 0 rgba(0, 255, 204, 0.5); }
+  60% { text-shadow: -1px 1px 0 rgba(0, 255, 204, 0.5); }
+  100% { text-shadow: 1px 1px 0 rgba(0, 255, 204, 0.5); }
+}
+
+.nav {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.neon-link {
+  color: #ff007f;
+  font-size: 1.5em;
+  margin: 10px 0;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  background: rgba(255, 0, 127, 0.2);
+}
+
+.neon-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ff007f;
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.neon-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.neon-link:hover {
+  color: #00ffcc;
+  text-shadow: 
+    0 0 5px rgba(0, 255, 204, 0.7), 
+    0 0 10px rgba(0, 255, 204, 0.7);
+}
+
+.neon-link:hover {
+  animation: link-glitch 0.5s forwards;
+}
